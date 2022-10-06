@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Account</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+
+  <form action="#" th:action="@{/register}"  th:object="${account}" method="post" class="was-validated">
+    <div class="form-group">
+      <label for="uname">Username</label>
+      <input type="text" class="form-control" id="uname" th:field="*{username}" placeholder="Enter username" name="uname" required>
+    </div>
+    <div class="form-group">
+      <label for="uname">Full Name</label>
+      <input type="text" class="form-control" id="fname" th:field="*{fullName}" placeholder="Enter Full name" name="uname" required>
+    </div>
+    <div class="form-group">
+      <label for="uname">Email:</label>
+      <input type="email" class="form-control" id="ename" th:field="*{email}" placeholder="Enter Email" name="uname" required>
+    </div>
+    <div class="form-group">
+      <label for="uname">Password</label>
+      <input type="password" class="form-control" id="pname" th:field="*{password}" placeholder="Enter password" name="uname" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</body>
+</html>

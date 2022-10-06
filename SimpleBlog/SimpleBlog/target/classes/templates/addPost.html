@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-light">
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/home}">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" th:href="@{/addPost}">Add Post</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" th:href="@{/register}">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/login}">Login</a>
+        </li>
+    </ul>
+
+</nav>
+
+
+<div class="container">
+
+    <form action="#" th:action="@{/save}"  th:object="${post}" method="post" class="was-validated">
+        <div class="form-group">
+            <label for="uname">Title:</label>
+            <input type="text" class="form-control" id="uname" th:field="*{title}" placeholder="Enter Title" name="uname" required>
+        </div>
+        <div class="form-group input-group-lg">
+            <label for="pwd">Content:</label>
+            <textarea class="form-control" id="pwd" th:field="*{content}" placeholder="Enter your content here" name="pswd" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
